@@ -1,6 +1,6 @@
 FROM gitlab.archlinux.org:5050/archlinux/archlinux-docker:base-master
 RUN pacman -Syyu --noconfirm --noprogressbar --quiet \
-    && pacman -S --noconfirm --noprogressbar --quiet base-devel gnupg \
+    && pacman -S --noconfirm --noprogressbar --quiet base-devel gnupg git \
     && mkdir -p /work && cd /work \
     && curl -s https://aur.archlinux.org/cgit/aur.git/snapshot/repoctl.tar.gz | tar -zxf - \
     && cd repoctl \
