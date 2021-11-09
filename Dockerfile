@@ -12,5 +12,7 @@ RUN pacman -Syyu --noconfirm --noprogressbar --quiet \
     && makepkg --noconfirm --noprogressbar --syncdeps --install --rmdeps \
     && cd .. && rm -rf python-telegram-send \
     && pacman -Rsnu --noconfirm --noprogressbar base-devel \
+    && curl -Lo /tini https://github.com/krallin/tini/releases/download/v0.19.0/tini-static-amd64 \
+    && chmod +x /tini \
     && rm -rf /var/lib/pacman/sync/* \
     && rm -rf /var/cache/pacman/*
